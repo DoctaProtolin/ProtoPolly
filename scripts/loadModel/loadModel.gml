@@ -66,10 +66,12 @@ function loadModel(source, vbuffer) {
         }
     }
     
+    var col = [c_red, c_green, c_blue, c_orange, c_purple, c_fuchsia];
+    
     for (var i = 0; i < array_length(faces); i ++) {
         var face = faces[i];
         
-        var pointList = [];
+        var rawPointList = [];
         var normList = [];
         
         for (var j = 0; j < array_length(face.faceVertexIndexes); j ++) {
@@ -79,15 +81,35 @@ function loadModel(source, vbuffer) {
             var vertex = vertices[vertIndex];
             var normal = vertexNormals[normIndex];
             
-            pointList[j] = vertex;
+            rawPointList[j] = vertex;
             normList[j] = normal;
         }
         
-        println("Point");
-        println(pointList);
-        println("Normals");
-        println(normList[0]);
-        vertAddTriangle(vbuffer, pointList, normList[0], 0, 0, c_red, 1);
+        println(rawPointList);
+        
+        var pointLists = [];
+        
+        // Create the square faces manually because I've been messing with this for loop for way too long.
+        pointLists[0] = [
+            rawPointList[0],
+            rawPointList[1],
+            rawPointList[2],
+        ];
+        
+        pointLists[1] = [
+            rawPointList[0],
+            rawPointList[3],
+            rawPointList[2],
+        ];
+        
+        for (var j = 0; j < array_length(pointLists); j ++) {
+            var pointList = pointLists[j];
+            
+            vertAddTriangle(vbuffer, pointList, normList[0], 0, 0, c_yellow, 1);
+            println("Added triangle");
+        }
+        
+        println("Added face");
     }
     
     

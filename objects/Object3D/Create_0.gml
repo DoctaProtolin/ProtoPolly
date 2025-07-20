@@ -15,7 +15,10 @@
 
     matrix = [];
 
+    x = room_width/2;
+    y = room_height/2;
+
     vertex_begin(vbuffer, Camera.vertex_format);
-    loadModel("C:/Users/yello/GameMakerProjects/CubeShooter/Cube.obj", vbuffer);
+    loadModel("C:/Users/yello/GameMakerProjects/CubeShooter/Cylinder.obj", vbuffer);
     vertex_end(vbuffer);
 

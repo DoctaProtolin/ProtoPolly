@@ -1,9 +1,11 @@
 
+    #macro WALK "walk"
+    #macro LOOKAROUND "lookaround"
+
     gpu_set_ztestenable(true);
     gpu_set_zwriteenable(true);
 
     // Basis of everything you draw in gamemaker. And computers?
-
     
     vertex_format_begin();
     vertex_format_add_position_3d();
@@ -51,4 +53,6 @@
     velX = 0;
     velY = 0;
     velZ = 0;
+
+    mode = LOOKAROUND;
 
