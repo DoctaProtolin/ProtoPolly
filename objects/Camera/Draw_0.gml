@@ -2,7 +2,7 @@
     // If using viewports, camera_get_active returns the viewport currently in use.
     var camera = camera_get_active();
 
-    camera_set_view_mat(camera, matrix_build_lookat(x, y, z, x + dcos(lookAngle), y + dsin(lookAngle), z + dsin(lookAngleZ), 0, 0, -1));
+    camera_set_view_mat(camera, matrix_build_lookat(x, y, z, room_width/2, room_height/2, z + dsin(lookAngleZ), 0, 0, -1));
     camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(), 1, 3000));
 
     shader_set(shdLighting);
@@ -12,6 +12,12 @@
     vertex_submit(vbuffer, pr_trianglelist, sprite_get_texture(sprGrass, 0));
     
     with (Cube) {
+        matrix_set(matrix_world, matrix);
+        vertex_submit(vbuffer, pr_trianglelist, -1);
+        matrix_set(matrix_world, matrix_build_identity());
+    }
+
+    with (Object3D) {
         matrix_set(matrix_world, matrix);
         vertex_submit(vbuffer, pr_trianglelist, -1);
         matrix_set(matrix_world, matrix_build_identity());

@@ -1,12 +1,15 @@
     
-    matrix = matrix_build(x, y, z, 0, 0, timer, size_x, size_y, size_z);
     
+    
+    // I have to redeclare the normals here for some reason.
     bottomNorm = [ 0,  0, -1];
     topNorm    = [ 0,  0,  1];
     southNorm  = [ 0, -1,  0];
     northNorm  = [ 0,  1,  0];
     westNorm   = [-1,  0,  0];
     eastNorm   = [ 1,  0,  0];
+
+    matrix = matrix_build(x, y, z, 0, 0, timer, size_x, size_y, size_z);
 
     vertex_begin(vbuffer, Camera.vertex_format);
 

@@ -36,14 +36,14 @@
             vertAddPoint(vbuffer, i + s, j + s, checker_z, 0, 0, 1,   1, 1, col, 1);
         }
     }
-    
+
     vertex_end(vbuffer);
 
     x = room_width/2;
     y = room_height;
     z = 100;
 
-    lookAngle = 0;
+    lookAngle = 180;
     lookAngleZ = 0;
     Speed = 20;
     Friction = 0.9;

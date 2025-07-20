@@ -1,17 +1,19 @@
 
+    // Get input
     var moveVertical = keyboard_check(vk_up) - keyboard_check(vk_down);
     var moveHorizontal = keyboard_check(vk_right) - keyboard_check(vk_left);
     var lookDepth = keyboard_check(ord("W")) - keyboard_check(ord("S"));
-
     var lookHorizontal = keyboard_check(ord("A")) - keyboard_check(ord("D"));
+    
+    // Update velocity
+    velX += dcos(lookAngle - 90) * Speed * moveVertical;
+    velY += dsin(lookAngle - 90) * Speed * moveVertical;
 
-    velX += dcos(lookAngle - 90) * Speed * moveHorizontal;
-    velY += dsin(lookAngle - 90) * Speed * moveHorizontal;
+    velX += dcos(lookAngle) * Speed * moveHorizontal;
+    velY += dsin(lookAngle) * Speed * moveHorizontal;
 
-    velX += dcos(lookAngle) * Speed * moveVertical;
-    velY += dsin(lookAngle) * Speed * moveVertical;
-
-
+    
+    // Update friction
     if (moveHorizontal == 0) {
         if (abs(velX) > 1) velX *= Friction;
         else velX = 0;
@@ -22,17 +24,15 @@
         else velY = 0;
     }
 
-
     lookAngle += lookHorizontal * 2;
     lookAngleZ += lookDepth * 2;
 
-    
+    // Clamp velocity
     velX = clamp(velX, -5, 5);
     velY = clamp(velY, -5, 5);
     velZ = clamp(velZ, -5, 5);
 
+    // Update position
     x += velX;
     y += velY;
     z += velZ;
-
-    println(velZ);
