@@ -68,10 +68,12 @@ function loadModel(source, vbuffer) {
     
     var col = [c_red, c_green, c_blue, c_orange, c_purple, c_fuchsia];
     
+    println(["Length of faces:", array_length(faces)]);
+    
     for (var i = 0; i < array_length(faces); i ++) {
         var face = faces[i];
         
-        var rawPointList = [];
+        var pointList = [];
         var normList = [];
         
         for (var j = 0; j < array_length(face.faceVertexIndexes); j ++) {
@@ -81,32 +83,41 @@ function loadModel(source, vbuffer) {
             var vertex = vertices[vertIndex];
             var normal = vertexNormals[normIndex];
             
-            rawPointList[j] = vertex;
+            pointList[j] = vertex;
             normList[j] = normal;
         }
         
-        println(rawPointList);
         
-        var pointLists = [];
+        //for (var j = 0; j < array_length(pointList); j ++) {
+            //
+            //var index = (j mod 3) + floor(j / 3);
+            //
+            //println(index);
+            //
+            //var point = pointList[index];
+            //var normal = normList[index];
+            //
+            //vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_yellow, 1);
+        //}
         
-        // Create the square faces manually because I've been messing with this for loop for way too long.
-        pointLists[0] = [
-            rawPointList[0],
-            rawPointList[1],
-            rawPointList[2],
-        ];
+        var index = 0;
+        var j = 0;
         
-        pointLists[1] = [
-            rawPointList[0],
-            rawPointList[3],
-            rawPointList[2],
-        ];
+        println(face);
         
-        for (var j = 0; j < array_length(pointLists); j ++) {
-            var pointList = pointLists[j];
+        while (floor(j / 3) < array_length(pointList)-2) {
             
-            vertAddTriangle(vbuffer, pointList, normList[0], 0, 0, c_yellow, 1);
-            println("Added triangle");
+            println(["Index:", index, "J:", j]);
+            
+            
+            var point = pointList[index];
+            var normal = normList[index];
+            
+            vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_red, 1);
+            
+            j ++;
+            index = (j mod 3) + floor(j / 3);
+            if (j mod 3 == 0) index = 0;
         }
         
         println("Added face");

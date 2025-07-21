@@ -50,6 +50,8 @@
     Speed = 20;
     Friction = 0.9;
 
+    focusDist = 200;
+
     velX = 0;
     velY = 0;
     velZ = 0;

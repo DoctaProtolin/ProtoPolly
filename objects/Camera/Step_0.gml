@@ -38,12 +38,13 @@
         y += velY;
         z += velZ;
     } else {
-        var dist = 500;
         
         lookAngle += moveHorizontal * 2;
         
         z += moveVertical * 10;
         
-        x = dcos(lookAngle) * dist + room_width/2;
-        y = dsin(lookAngle) * dist + room_height/2;
+        focusDist -= lookDepth * 10;
+        
+        x = dcos(lookAngle) * focusDist + room_width/2;
+        y = dsin(lookAngle) * focusDist + room_height/2;
     }
