@@ -1,5 +1,11 @@
 
-function loadModel(source, vbuffer) {
+function loadModel(source, vbuffer = -1) {
+    
+    if (vbuffer == -1) {
+        show_error("I need to know which buffer to load the vertex data into.", true);
+        return;
+    }
+    
     var file = file_text_open_read(source);
     println(file);
     var lines = [];
@@ -103,18 +109,14 @@ function loadModel(source, vbuffer) {
         var index = 0;
         var j = 0;
         
-        println(face);
-        
         while (floor(j / 3) < array_length(pointList)-2) {
-            
-            println(["Index:", index, "J:", j]);
-            
             
             var point = pointList[index];
             var normal = normList[index];
             
             vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_red, 1);
             
+            // Needed to use a table for this part. Thank you Dr. Orlov
             j ++;
             index = (j mod 3) + floor(j / 3);
             if (j mod 3 == 0) index = 0;

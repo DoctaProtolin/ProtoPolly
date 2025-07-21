@@ -1,20 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"Cube",
+  "%Name":"DefaultCube",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Cube",
+  "name":"DefaultCube",
   "overriddenProperties":[],
   "parent":{
-    "name":"Primitives",
-    "path":"folders/Objects/Primitives.yy",
+    "name":"Tests",
+    "path":"folders/Objects/Tests.yy",
   },
-  "parentObjectId":{
-    "name":"Object3D",
-    "path":"objects/Object3D/Object3D.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

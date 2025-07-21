@@ -1,7 +1,6 @@
 
     vbuffer = vertex_create_buffer();
 
-  
     // Set properties
     z = 100;
 
@@ -17,8 +16,4 @@
 
     x = room_width/2;
     y = room_height/2;
-
-    vertex_begin(vbuffer, Camera.vertex_format);
-    loadModel("C:/Users/yello/GameMakerProjects/CubeShooter/Cylinder.obj", vbuffer);
-    vertex_end(vbuffer);
 

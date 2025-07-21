@@ -5,10 +5,12 @@
     camera_set_view_mat(camera, matrix_build_lookat(x, y, z, room_width/2, room_height/2, 0, 0, 0, -1));
     camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(), 1, 8000));
 
-    shader_set(shdLighting);
+    
     camera_apply(camera);
 
     // Render objects
+
+    shader_set(shdPointLight);
     vertex_submit(vbuffer, pr_trianglelist, sprite_get_texture(sprGrass, 0));
     
     with (Cube) {
