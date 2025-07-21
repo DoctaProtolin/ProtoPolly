@@ -1,6 +1,7 @@
 
     event_inherited();
+    
+    var data = loadModel("C:/Users/yello/GameMakerProjects/CubeShooter/Cube.obj");
 
-    vertex_begin(vbuffer, Camera.vertex_format);
-    loadModel("C:/Users/yello/GameMakerProjects/CubeShooter/Cube.obj", vbuffer);
-    vertex_end(vbuffer);
+    vertices = data.vertices;
+    vertexNormals = data.vertexNormals;

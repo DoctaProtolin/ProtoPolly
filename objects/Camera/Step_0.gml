@@ -39,12 +39,12 @@
         z += velZ;
     } else {
         
+        // Update positions from controls
         lookAngle += moveHorizontal * 2;
-        
-        z += moveVertical * 10;
-        
         focusDist -= lookDepth * 10;
         
+        // Update camera position
         x = dcos(lookAngle) * focusDist + room_width/2;
         y = dsin(lookAngle) * focusDist + room_height/2;
+        z += moveVertical * 10;
     }

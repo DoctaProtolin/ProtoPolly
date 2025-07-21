@@ -106,7 +106,7 @@
     //vertAddPoint(vbuffer, 0, 0, 0, 0, 0, 1, 0, 0, c_blue, 1);
     //vertAddPoint(vbuffer, 0, 100, 0, 0, 0, 1, 0, 0, c_blue, 1);
     //vertAddPoint(vbuffer, 100, 100, 0, 0, 0, 1, 0, 0, c_blue, 1);
-//
+    
     //vertAddPoint(vbuffer, 0, 0, 0, 0, 0, 1, 0, 0, c_blue, 1);
     //vertAddPoint(vbuffer, 100, 0, 0, 0, 0, 1, 0, 0, c_blue, 1);
     //vertAddPoint(vbuffer, 100, 100, 0, 0, 0, 1, 0, 0, c_blue, 1);

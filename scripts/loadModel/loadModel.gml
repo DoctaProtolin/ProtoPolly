@@ -1,10 +1,5 @@
 
-function loadModel(source, vbuffer = -1) {
-    
-    if (vbuffer == -1) {
-        show_error("I need to know which buffer to load the vertex data into.", true);
-        return;
-    }
+function loadModel(source) {
     
     var file = file_text_open_read(source);
     println(file);
@@ -16,15 +11,12 @@ function loadModel(source, vbuffer = -1) {
         file_text_readln(file);
     }
     
-    println("Displaying file contents: ");
-    
-    for (var i = 0; i < array_length(lines); i ++) {
-        println(lines[i]);
-    }
-    
     var vertices = [];
     var vertexNormals = [];
     var faces = [];
+    
+    var outputVertices = [];
+    var outputNormals = []; // Packed so we can refresh object normals when they're rotated
     
     for (var i = 0; i < array_length(lines); i ++) {
         var tokens = string_split(lines[i], " ");
@@ -72,10 +64,6 @@ function loadModel(source, vbuffer = -1) {
         }
     }
     
-    var col = [c_red, c_green, c_blue, c_orange, c_purple, c_fuchsia];
-    
-    println(["Length of faces:", array_length(faces)]);
-    
     for (var i = 0; i < array_length(faces); i ++) {
         var face = faces[i];
         
@@ -93,19 +81,6 @@ function loadModel(source, vbuffer = -1) {
             normList[j] = normal;
         }
         
-        
-        //for (var j = 0; j < array_length(pointList); j ++) {
-            //
-            //var index = (j mod 3) + floor(j / 3);
-            //
-            //println(index);
-            //
-            //var point = pointList[index];
-            //var normal = normList[index];
-            //
-            //vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_yellow, 1);
-        //}
-        
         var index = 0;
         var j = 0;
         
@@ -114,7 +89,21 @@ function loadModel(source, vbuffer = -1) {
             var point = pointList[index];
             var normal = normList[index];
             
-            vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_red, 1);
+            var newIndex = array_length(outputVertices);
+            
+            outputNormals[newIndex] = [
+                normal[0],
+                normal[1],
+                normal[2],
+            ];
+            
+            outputVertices[newIndex] = [
+                point[0],
+                point[1],
+                point[2],
+            ];
+            
+            //vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_red, 1);
             
             // Needed to use a table for this part. Thank you Dr. Orlov
             j ++;
@@ -125,6 +114,9 @@ function loadModel(source, vbuffer = -1) {
         println("Added face");
     }
     
-    
+    return {
+        vertices: outputVertices,
+        vertexNormals: outputNormals,
+    }
     
 }

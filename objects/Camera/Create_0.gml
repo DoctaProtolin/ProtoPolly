@@ -1,6 +1,6 @@
 
     #macro WALK "walk"
-    #macro LOOKAROUND "lookaround"
+    #macro ORBIT "orbit"
 
     gpu_set_ztestenable(true);
     gpu_set_zwriteenable(true);
@@ -56,5 +56,5 @@
     velY = 0;
     velZ = 0;
 
-    mode = LOOKAROUND;
+    mode = ORBIT;
 
