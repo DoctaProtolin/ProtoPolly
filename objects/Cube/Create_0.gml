@@ -5,3 +5,7 @@
 
     vertices = data.vertices;
     vertexNormals = data.vertexNormals;
+
+    scaleX = 10;
+    scaleY = 10;
+    scaleZ = 10;    
