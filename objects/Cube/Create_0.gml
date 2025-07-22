@@ -6,6 +6,8 @@
     vertices = data.vertices;
     vertexNormals = data.vertexNormals;
 
-    scaleX = 10;
-    scaleY = 10;
-    scaleZ = 10;    
+    scaleX = 100;
+    scaleY = 100;
+    scaleZ = 100;
+
+    timer = 0;

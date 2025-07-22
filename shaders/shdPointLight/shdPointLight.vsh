@@ -21,7 +21,7 @@ void main()
     vec3 lightPosition = vec3(0., 0, 100.);
     
     vec4 lightColor = vec4(1., 1., 1., 1.);
-    float lightIntensity = 9000.;
+    float lightIntensity = 900000.;
     
     float diffuseStrength = clamp(dot(lightPosition, in_Position), 0., 1.);
  

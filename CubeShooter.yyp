@@ -48,6 +48,7 @@
     {"id":{"name":"vertAddPoint","path":"scripts/vertAddPoint/vertAddPoint.yy",},},
     {"id":{"name":"vertAddTriangle","path":"scripts/vertAddTriangle/vertAddTriangle.yy",},},
     {"id":{"name":"vertexScale","path":"scripts/vertexScale/vertexScale.yy",},},
+    {"id":{"name":"vertexTranslate","path":"scripts/vertexTranslate/vertexTranslate.yy",},},
     {"id":{"name":"shdDirectionalLight","path":"shaders/shdDirectionalLight/shdDirectionalLight.yy",},},
     {"id":{"name":"shdPointLight","path":"shaders/shdPointLight/shdPointLight.yy",},},
     {"id":{"name":"sprGrass","path":"sprites/sprGrass/sprGrass.yy",},},

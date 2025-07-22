@@ -12,22 +12,18 @@ function vertexScale(inVertex) {
         z: inVertex[2],
     };
     
-    var radius = point_distance_3d(origin.x, origin.y, origin.z, vertex.x, vertex.y, vertex.z);
+    var scaleLength = sqrt(sqr(vertex.x) + sqr(vertex.y) + sqr(vertex.z));
     
-    var diffX = vertex.x - origin.x;
-    var diffY = vertex.y - origin.y;
-    var diffZ = vertex.z - origin.z;
-    
-    println(radius);
-    
-    // Normalize
-    diffX /= radius;
-    diffY /= radius;
-    diffZ /= radius;
+    // Normalize the direction in which to scale
+    var scaleDirection = {
+        x: vertex.x / scaleLength,
+        y: vertex.y / scaleLength,
+        z: vertex.z / scaleLength,
+    }
     
     return [
-        x + diffX * radius,
-        y + diffY * radius,
-        z + diffZ * radius,
+        x + scaleDirection.x * scaleX,
+        y + scaleDirection.y * scaleY,
+        z + scaleDirection.z * scaleZ,
     ];
 }
