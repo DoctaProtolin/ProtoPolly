@@ -26,4 +26,5 @@ function vertexScale(inVertex) {
         y + scaleDirection.y * scaleY,
         z + scaleDirection.z * scaleZ,
     ];
+    
 }

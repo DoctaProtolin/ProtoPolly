@@ -1,4 +1,3 @@
-    
-    x = dsin(timer) * 100 + room_width/2;
-
+        
+    x = dsin(timer) * 400 + room_width/2;
     timer ++;

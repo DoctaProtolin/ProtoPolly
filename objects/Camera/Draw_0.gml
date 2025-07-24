@@ -6,6 +6,17 @@
     camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(), 1, 8000));
 
     shader_set(shdPointLight);
+    
+    // Update shader
+    var uLightPosition = shader_get_uniform(shdPointLight, "lightPosition");
+
+    shader_set_uniform_f(uLightPosition, room_width/2, room_height/2, dsin(lightAngle) * 100 + 100);
+    
+    lightAngle += 2;
+
+    //println(dsin(lightAngle) * 200 + 100);
+
+    // Apply camera
     camera_apply(camera);
 
     // Render objects
@@ -18,8 +29,14 @@
         vertex_begin(_vbuffer, Camera.vertex_format);
         
         for (var i = 0; i < array_length(vertices); i ++) {
-            var vertex = vertexScale(vertices[i]); //vertices[i];
+            var vertex = vertices[i];
+            
+            
+            vertex = vertexScale(vertex);
+            //vertex = vertexTranslate(vertex);
+            
             var normal = vertexNormals[i];
+            
             vertAddPoint(_vbuffer, vertex[0], vertex[1], vertex[2], normal[0], normal[1], normal[2], 0, 0, c_green, 1);
         }
         

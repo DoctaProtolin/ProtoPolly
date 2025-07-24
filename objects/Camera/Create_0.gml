@@ -58,3 +58,5 @@
 
     mode = ORBIT;
 
+    lightAngle = 0;
+

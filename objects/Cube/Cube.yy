@@ -9,8 +9,8 @@
   "name":"Cube",
   "overriddenProperties":[],
   "parent":{
-    "name":"Primitives",
-    "path":"folders/Objects/Primitives.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":{
     "name":"Object3D",
