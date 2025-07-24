@@ -8,9 +8,13 @@
     shader_set(shdPointLight);
     
     // Update shader
-    var uLightPosition = shader_get_uniform(shdPointLight, "lightPosition");
+    var u_lightPosition = shader_get_uniform(shdPointLight, "u_lightPosition");
+    var u_lightIntensity = shader_get_uniform(shdPointLight, "u_lightIntensity");
+    var u_ambientIntensity = shader_get_uniform(shdPointLight, "u_ambientIntensity");
 
-    shader_set_uniform_f(uLightPosition, room_width/2, room_height/2, dsin(lightAngle) * 100 + 100);
+    shader_set_uniform_f(u_lightPosition, room_width/2, room_height/2, 100);
+    shader_set_uniform_f(u_lightIntensity, 500000);
+    shader_set_uniform_f(u_ambientIntensity, 0.05);
     
     lightAngle += 2;
 
