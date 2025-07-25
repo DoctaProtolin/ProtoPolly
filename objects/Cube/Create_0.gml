@@ -1,7 +1,7 @@
 
     event_inherited();
     
-    var data = loadModel("C:/Users/yello/GameMakerProjects/CubeShooter/Cube.obj");
+    var data = loadModel("C:/Users/yello/GameMakerProjects/ProtoPolly/Cube.obj");
 
     vertices = data.vertices;
     vertexNormals = data.vertexNormals;
