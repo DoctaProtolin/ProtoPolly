@@ -1,10 +1,9 @@
 
     event_inherited();
     
-    var data = loadModel("C:/Users/yello/GameMakerProjects/ProtoPolly/Cube.obj");
-
-    vertices = data.vertices;
-    vertexNormals = data.vertexNormals;
+    vertex_begin(vbuffer, Camera.vertex_format);
+    loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Cube.obj");
+    vertex_end(vbuffer);
 
     x = room_width/2;
     y = room_height/2;

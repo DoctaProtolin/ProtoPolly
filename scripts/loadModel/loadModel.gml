@@ -1,5 +1,5 @@
 
-function loadModel(source) {
+function loadModel(vbuffer, source) {
     
     var file = file_text_open_read(source);
     println(file);
@@ -103,7 +103,7 @@ function loadModel(source) {
                 point[2],
             ];
             
-            //vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_red, 1);
+            vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_white, 1);
             
             // Needed to use a table for this part. Thank you Dr. Orlov
             j ++;
@@ -112,11 +112,6 @@ function loadModel(source) {
         }
         
         println("Added face");
-    }
-    
-    return {
-        vertices: outputVertices,
-        vertexNormals: outputNormals,
     }
     
 }

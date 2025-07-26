@@ -27,28 +27,14 @@
     vertex_submit(vbuffer, pr_trianglelist, sprite_get_texture(sprGrass, 0));
     
     with (Object3D) {
-        // var matrix = matrix_build(x, y, z, rotX, rotY, rotZ, sizeX, sizeY, sizeZ);
-        var _vbuffer = vertex_create_buffer();
+        var matrix = matrix_build(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ);
         
-        vertex_begin(_vbuffer, Camera.vertex_format);
+        // Don't display Sonic model
+        if (!displayModel) continue;
         
-        for (var i = 0; i < array_length(vertices); i ++) {
-            var vertex = vertices[i];
-            
-            
-            vertex = vertexScale(vertex);
-            //vertex = vertexTranslate(vertex);
-            
-            var normal = vertexNormals[i];
-            
-            vertAddPoint(_vbuffer, vertex[0], vertex[1], vertex[2], normal[0], normal[1], normal[2], 0, 0, c_green, 1);
-        }
-        
-        vertex_end(_vbuffer);
-        
-        //matrix_set(matrix_world, matrix);
-        vertex_submit(_vbuffer, pr_trianglelist, -1);
-        //matrix_set(matrix_world, matrix_build_identity()); // Reset
+        matrix_set(matrix_world, matrix);
+        vertex_submit(vbuffer, pr_trianglelist, -1);
+        matrix_set(matrix_world, matrix_build_identity()); // Reset
     }
 
     shader_reset();
