@@ -9,6 +9,6 @@
     scaleY = 100;
     scaleZ = 100;
 
-    displayModel = false;
+    //displayModel = false;
     
     

@@ -5,7 +5,7 @@
     loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Cube.obj");
     vertex_end(vbuffer);
 
-    x = room_width/2;
+    x = room_width/2 + 200;
     y = room_height/2;
 
     scaleX = 100;

@@ -13,10 +13,9 @@
     var u_ambientIntensity = shader_get_uniform(shdPointLight, "u_ambientIntensity");
 
     shader_set_uniform_f(u_lightPosition, room_width/2, room_height/2, 100);
-    shader_set_uniform_f(u_lightIntensity, 500000);
-    shader_set_uniform_f(u_ambientIntensity, 0.05);
+    shader_set_uniform_f(u_lightIntensity, 100000);
+    shader_set_uniform_f(u_ambientIntensity, 0.3);
     
-    lightAngle += 2;
 
     //println(dsin(lightAngle) * 200 + 100);
 

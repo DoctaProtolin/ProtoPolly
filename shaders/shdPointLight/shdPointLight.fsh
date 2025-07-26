@@ -24,6 +24,17 @@ void main()
     float dist = distance(u_lightPosition, v_worldPosition.xyz);
     float lightDiff = max(dot(normal, lightDirection), 0.);
     
-    gl_FragColor = lightDiff * lightColor * 1./(dist*dist) * u_lightIntensity * texture2D(gm_BaseTexture, v_vTexcoord) + vec4(u_ambientIntensity);
+    vec4 color = lightDiff * lightColor * 1./(dist*dist) * u_lightIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
+    
+    float luminance = (0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b);
+    
+    if (luminance < u_ambientIntensity) {
+        gl_FragColor = texture2D(gm_BaseTexture, v_vTexcoord) * u_ambientIntensity;
+        //gl_FragColor = normalize(gl_FragColor);
+        //gl_FragColor *= u_ambientIntensity;
+    } else {
+        gl_FragColor = color;
+    }
+    
     gl_FragColor.a = 1.;
 }

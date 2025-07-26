@@ -30,6 +30,7 @@ void main()
     
     // Transform normal into world space (optional: normalize here or in frag) (thanks Chat GPT)
     // Apparently this will fail if the surface is scaled with shearing, mirroring, or non-uniform scaling
+    
     mat3 normalMatrix = mat3(gm_Matrices[MATRIX_WORLD]);
     v_normal = normalize(normalMatrix * in_Normal);
     
