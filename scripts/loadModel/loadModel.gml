@@ -13,6 +13,7 @@ function loadModel(vbuffer, source) {
     
     var vertices = [];
     var vertexNormals = [];
+    var textureCoords = [];
     var faces = [];
     
     var outputVertices = [];
@@ -45,20 +46,32 @@ function loadModel(vbuffer, source) {
                 vertexNormals[array_length(vertexNormals)] = vertexNormal; // Append
             break;
             
+            case "vt":
+                var textureCoord = [
+                    real(tokens[1]),
+                    real(tokens[2]),
+                ];
+            
+                textureCoords[array_length(textureCoords)] = textureCoord;
+            break;
+            
             case "f":
                 var faceVertexIndex = [];
                 var faceNormalIndex = [];
+                var faceTexcoordIndex = [];
                 
                 for (var j = 1; j < array_length(tokens); j ++) {
                     var faceData = string_split(tokens[j], "/");
                     
-                    faceVertexIndex[j-1] = real(faceData[0]);
-                    faceNormalIndex[j-1] = real(faceData[2]);
+                    faceVertexIndex[j-1]   = real(faceData[0]);
+                    faceTexcoordIndex[j-1] = real(faceData[1]);
+                    faceNormalIndex[j-1]   = real(faceData[2]);
                 }
             
                 faces[array_length(faces)] = {
                     faceVertexIndexes: faceVertexIndex,
                     faceNormalIndexes: faceNormalIndex,
+                    faceTexcoordIndexes: faceTexcoordIndex,
                 }
             break;
         }
@@ -69,16 +82,20 @@ function loadModel(vbuffer, source) {
         
         var pointList = [];
         var normList = [];
+        var texList = [];
         
         for (var j = 0; j < array_length(face.faceVertexIndexes); j ++) {
-            var vertIndex = face.faceVertexIndexes[j] - 1;
-            var normIndex = face.faceNormalIndexes[j] - 1;
+            var vertIndex    = face.faceVertexIndexes[j]   - 1;
+            var normIndex    = face.faceNormalIndexes[j]   - 1;
+            var textureIndex = face.faceTexcoordIndexes[j] - 1;
             
-            var vertex = vertices[vertIndex];
-            var normal = vertexNormals[normIndex];
+            var vertex   = vertices[vertIndex];
+            var normal   = vertexNormals[normIndex];
+            var texCoord = textureCoords[textureIndex];
             
             pointList[j] = vertex;
             normList[j] = normal;
+            texList[j] = texCoord;
         }
         
         var index = 0;
@@ -88,6 +105,7 @@ function loadModel(vbuffer, source) {
             
             var point = pointList[index];
             var normal = normList[index];
+            var texCoords = texList[index];
             
             var newIndex = array_length(outputVertices);
             
@@ -103,7 +121,7 @@ function loadModel(vbuffer, source) {
                 point[2],
             ];
             
-            vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], 0, 0, c_white, 1);
+            vertAddPoint(vbuffer, point[0], point[1], point[2], normal[0], normal[1], normal[2], texCoords[0], texCoords[1], c_white, 1);
             
             // Needed to use a table for this part. Thank you Dr. Orlov
             j ++;

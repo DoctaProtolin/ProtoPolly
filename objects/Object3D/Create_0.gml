@@ -13,3 +13,5 @@
     rotZ = 0;
 
     displayModel = true;
+    
+    texture = -1;

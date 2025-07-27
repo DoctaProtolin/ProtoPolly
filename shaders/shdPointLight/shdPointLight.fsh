@@ -24,9 +24,9 @@ void main()
     float dist = distance(u_lightPosition, v_worldPosition.xyz);
     float lightDiff = max(dot(normal, lightDirection), 0.);
     
-    vec4 color = lightDiff * lightColor * 1./(dist*dist) * u_lightIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
+    vec4 color = lightDiff * lightColor * 1./pow(dist, 1.65) * u_lightIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
     
-    float luminance = (0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b);
+    float luminance = 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b;
     
     if (luminance < u_ambientIntensity) {
         gl_FragColor = texture2D(gm_BaseTexture, v_vTexcoord) * u_ambientIntensity;

@@ -13,7 +13,7 @@
     var u_ambientIntensity = shader_get_uniform(shdPointLight, "u_ambientIntensity");
 
     shader_set_uniform_f(u_lightPosition, room_width/2, room_height/2, 100);
-    shader_set_uniform_f(u_lightIntensity, 100000);
+    shader_set_uniform_f(u_lightIntensity, 10000);
     shader_set_uniform_f(u_ambientIntensity, 0.3);
     
 
@@ -32,7 +32,7 @@
         if (!displayModel) continue;
         
         matrix_set(matrix_world, matrix);
-        vertex_submit(vbuffer, pr_trianglelist, -1);
+        vertex_submit(vbuffer, pr_trianglelist, texture);
         matrix_set(matrix_world, matrix_build_identity()); // Reset
     }
 

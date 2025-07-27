@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"vertAddTriangle",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Functions",
+    "path":"folders/Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
