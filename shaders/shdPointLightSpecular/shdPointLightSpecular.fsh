@@ -19,7 +19,7 @@ void main()
     vec4 lightColor = vec4(1., 1., 1., 1.);
     
     vec3 lightDirection = normalize(u_lightPosition - v_worldPosition.xyz);
-    vec3 cameraDirection = normalize(v_worldPosition.xyz - u_cameraPosition);
+    vec3 cameraDirection = normalize(u_cameraPosition - v_worldPosition.xyz);
     
     // Wouldn't want to warp lighting, now would we?
     vec3 normal = normalize(v_normal);
@@ -29,19 +29,13 @@ void main()
     
     float lightNormal = dot(normal, lightDirection);
     
-    vec4 color = lightDiff * lightColor * 1./pow(dist, 1.65) * u_lightIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
+    vec4 diffuseLight = lightDiff * lightColor * 1./pow(dist, 1.65) * u_lightIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
+    vec4 specularLight = dot(lightDirection, cameraDirection) * vec4(1.) * vec4(10000.) * 1./pow(dist, 2.);
+    vec4 ambientLight = vec4(1.) * u_ambientIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
+    //color += pow(dot(lightDirection, cameraDirection), 3.) * vec4(1., 0., 0., 1.) * vec4(100000.) * 1./pow(dist, 2.);
     
-    color += dot(lightDirection, cameraDirection) * vec4(1.) * vec4(1000.) * 1./pow(dist, 2.);
-    
-    
-    float luminance = 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b;
-    
-    if (luminance < u_ambientIntensity) {
-        gl_FragColor = texture2D(gm_BaseTexture, v_vTexcoord) * u_ambientIntensity;
-        
-    } else {
-        gl_FragColor = color;
-    }
-    
+    //float luminance = 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b;
+
+    gl_FragColor = diffuseLight + ambientLight;
     gl_FragColor.a = 1.;
 }

@@ -31,6 +31,7 @@
     {"id":{"name":"Cylinder","path":"objects/Cylinder/Cylinder.yy",},},
     {"id":{"name":"Object3D","path":"objects/Object3D/Object3D.yy",},},
     {"id":{"name":"Sonic","path":"objects/Sonic/Sonic.yy",},},
+    {"id":{"name":"Sphere","path":"objects/Sphere/Sphere.yy",},},
     {"id":{"name":"Test","path":"objects/Test/Test.yy",},},
     {"id":{"name":"rmStart","path":"rooms/rmStart/rmStart.yy",},},
     {"id":{"name":"loadModel","path":"scripts/loadModel/loadModel.yy",},},
