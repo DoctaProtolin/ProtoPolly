@@ -5,20 +5,22 @@
     camera_set_view_mat(camera, matrix_build_lookat(x, y, z, room_width/2, room_height/2, 0, 0, 0, -1));
     camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(), 1, 8000));
 
-    shader_set(shdPointLightSpecular);
+    shader_set(shdGeneralLight);
     
     // Update shader
-    var u_lightPosition = shader_get_uniform(shdPointLightSpecular, "u_lightPosition");
-    var u_cameraPosition = shader_get_uniform(shdPointLightSpecular, "u_cameraPosition");
+    var u_lightPosition = shader_get_uniform(shdGeneralLight, "u_lightPosition");
+    var u_cameraPosition = shader_get_uniform(shdGeneralLight, "u_cameraPosition");
 
-    var u_lightIntensity = shader_get_uniform(shdPointLightSpecular, "u_lightIntensity");
-    var u_ambientIntensity = shader_get_uniform(shdPointLightSpecular, "u_ambientIntensity");
+    var u_lightIntensity = shader_get_uniform(shdGeneralLight, "u_lightIntensity");
+    var u_ambientIntensity = shader_get_uniform(shdGeneralLight, "u_ambientIntensity");
+    var u_specularIntensity = shader_get_uniform(shdGeneralLight, "u_specularIntensity");
 
     shader_set_uniform_f(u_lightPosition, room_width/2, room_height/2, 100);
     shader_set_uniform_f(u_cameraPosition, x, y, z);
 
     shader_set_uniform_f(u_lightIntensity, 10000);
     shader_set_uniform_f(u_ambientIntensity, 0.3);
+    shader_set_uniform_f(u_specularIntensity, 0);
     
     
 

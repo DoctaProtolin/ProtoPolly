@@ -5,7 +5,7 @@
     loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Cube.obj");
     vertex_end(vbuffer);
 
-    //texture = sprite_get_texture(sprMetal, 0);
+    texture = sprite_get_texture(sprWood, 0);
 
     x = room_width/2 + 300;
     y = room_height/2;

@@ -5,6 +5,8 @@
     loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Sphere.obj");
     vertex_end(vbuffer);
 
+    texture = sprite_get_texture(sprMetal, 0);
+
     scaleX = 100;
     scaleY = 100;
     scaleZ = 100;

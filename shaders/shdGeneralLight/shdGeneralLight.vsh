@@ -12,8 +12,10 @@ varying vec4 v_vColour;
 // Arguments
 uniform vec3 u_lightPosition;
 uniform vec3 u_cameraPosition;
+
 uniform float u_lightIntensity;
 uniform float u_ambientIntensity;
+uniform float u_specularIntensity;
 
 varying vec4 v_worldPosition;
 varying vec3 v_normal;

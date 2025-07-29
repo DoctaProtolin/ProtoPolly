@@ -1,7 +1,7 @@
 {
   "$GMShader":"",
-  "%Name":"shdPointLightSpecular",
-  "name":"shdPointLightSpecular",
+  "%Name":"shdGeneralLight",
+  "name":"shdGeneralLight",
   "parent":{
     "name":"Shaders",
     "path":"folders/Shaders.yy",
