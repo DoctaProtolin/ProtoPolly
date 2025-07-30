@@ -15,3 +15,4 @@
     displayModel = true;
     
     texture = -1;
+    specularIntensity = 0;

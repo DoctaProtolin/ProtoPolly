@@ -7,9 +7,13 @@
 
     texture = sprite_get_texture(sprMetal, 0);
 
+    x = room_width/2 - 300;
+    y = room_height/2;
+
     scaleX = 100;
     scaleY = 100;
     scaleZ = 100;
 
-    x = room_width/2 - 300;
-    y = room_height/2;
+    specularIntensity = 20000;
+
+    
