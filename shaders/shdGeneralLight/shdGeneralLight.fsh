@@ -28,20 +28,18 @@ void main()
     float dist = distance(u_lightPosition, v_worldPosition.xyz);
     float lightDiff = max(dot(normal, lightDirection), 0.);
     
-
     vec4 diffuseLight = lightDiff * lightColor * 1./pow(dist, 1.65) * u_lightIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
     vec4 ambientLight = vec4(1.) * u_ambientIntensity * texture2D(gm_BaseTexture, v_vTexcoord);
     
     // Specular calculations
     //float lightNormal = dot(normal, lightDirection);
     
-    vec3 lightReflect = reflect(lightDirection, normal);
-    lightReflect = normalize(lightReflect);
+    vec3 lightReflect = normalize(reflect(lightDirection, normal));
     
-    float specularFactor = pow(dot(lightReflect, -cameraDirection), 15.); // why is camDirection negative?
-    specularFactor = clamp(specularFactor, 0., 1.); // Clamp it
+    float specularFactor = pow(max(dot(lightReflect, -cameraDirection), 0.), 5.); // why must cameraDirection be negative?
+    //specularFactor = clamp(specularFactor, 0., 1.); // Clamp it
     
-    vec4 specularLight = specularFactor * vec4(1.) * u_specularIntensity * 1./pow(dist, 2.) * texture2D(gm_BaseTexture, v_vTexcoord);
+    vec4 specularLight = specularFactor * vec4(1.) * u_specularIntensity * 1./pow(dist, 1.5) * texture2D(gm_BaseTexture, v_vTexcoord);
     
     //float luminance = 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b;
 

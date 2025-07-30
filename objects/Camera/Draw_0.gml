@@ -20,7 +20,7 @@
 
     shader_set_uniform_f(u_lightIntensity, 10000);
     shader_set_uniform_f(u_ambientIntensity, 0.3);
-    shader_set_uniform_f(u_specularIntensity, 0);
+    shader_set_uniform_f(u_specularIntensity, 20000);
     
     
 

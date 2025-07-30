@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"loadModel",
   "parent":{
-    "name":"Functions",
-    "path":"folders/Functions.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
