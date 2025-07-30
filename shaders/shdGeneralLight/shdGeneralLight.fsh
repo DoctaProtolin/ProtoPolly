@@ -33,7 +33,7 @@ void main()
     
     // Specular Calculations below
     vec3 lightReflect = normalize(reflect(lightDirection, normal));
-    float specularFactor = pow(max(dot(lightReflect, -cameraDirection), 0.), 5.); // why must cameraDirection be negative?
+    float specularFactor = pow(max(dot(lightReflect, cameraDirection), 0.), 5.); // why must cameraDirection be negative?
     
     vec4 specularLight = specularFactor * vec4(1.) * u_specularIntensity * 1./pow(dist, 1.5) * texture2D(gm_BaseTexture, v_vTexcoord);
     
