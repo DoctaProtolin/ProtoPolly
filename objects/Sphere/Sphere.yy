@@ -33,7 +33,13 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
-  "spriteMaskId":null,
+  "spriteId":{
+    "name":"sprSphere",
+    "path":"sprites/sprSphere/sprSphere.yy",
+  },
+  "spriteMaskId":{
+    "name":"sprSphere",
+    "path":"sprites/sprSphere/sprSphere.yy",
+  },
   "visible":true,
 }

@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprCube",
+    "path":"sprites/sprCube/sprCube.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
