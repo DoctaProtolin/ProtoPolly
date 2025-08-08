@@ -14,3 +14,7 @@
     }
 
     timer = 0;
+
+    dimension = irandom(3);
+    offset = irandom(100);
+    s = irandom(20 - 5) + 5;
