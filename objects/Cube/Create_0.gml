@@ -5,13 +5,12 @@
     loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Cube.obj");
     vertex_end(vbuffer);
 
-    texture = sprite_get_texture(sprWood, 0);
+    var sprite = choose(sprBrick, sprMetal, sprWood);
+    texture = sprite_get_texture(sprite, 0);
 
-    x = room_width/2 + 300;
-    y = room_height/2;
-
-    scaleX = 100;
-    scaleY = 100;
-    scaleZ = 100;
+    if (sprite == sprMetal) {
+        material.specularIntensity = 10000;
+        material.specularPower = 5;
+    }
 
     timer = 0;

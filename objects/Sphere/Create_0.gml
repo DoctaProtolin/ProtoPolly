@@ -14,6 +14,7 @@
     scaleY = 100;
     scaleZ = 100;
 
-    specularIntensity = 20000;
+    material.specularIntensity = 200000;
+    material.specularPower = 15;
 
     

@@ -9,8 +9,8 @@
   "name":"Test",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Models",
+    "path":"folders/Objects/Models.yy",
   },
   "parentObjectId":null,
   "persistent":false,

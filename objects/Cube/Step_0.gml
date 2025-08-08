@@ -3,5 +3,3 @@
     //y = dcos(timer) * 400 + room_height/2;
     //
     //timer ++;
-
-    rotZ ++;
