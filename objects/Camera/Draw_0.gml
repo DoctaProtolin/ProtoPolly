@@ -1,5 +1,5 @@
      
-    #macro DEFAULT_RENDERER shdMultiLight
+   
 
     // If using viewports, camera_get_active returns the viewport currently in use.
     var camera = camera_get_active();
@@ -12,8 +12,9 @@
     // Apply camera
     camera_apply(camera);
 
-    // Render objects
+    shader_set(DEFAULT_RENDERER);
     vertex_submit(vbuffer, pr_trianglelist, sprite_get_texture(sprGrass, 0));
+    shader_reset();
 
     var lightPositions = [];
     var lightColours = [];
@@ -58,6 +59,8 @@
         array_push(lightPositions, coord);
         array_push(lightColours, color);
     }
+
+    #macro DEFAULT_RENDERER shdMultiLight   
 
     with (Object3D) {
         if (!displayModel) continue;
