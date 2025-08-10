@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"3D",
+  "%Name":"ProtoPolly",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -27,7 +27,7 @@
   "MetaData":{
     "IDEVersion":"2024.13.1.193",
   },
-  "name":"3D",
+  "name":"ProtoPolly",
   "resources":[
     {"id":{"name":"Camera","path":"objects/Camera/Camera.yy",},},
     {"id":{"name":"Cube","path":"objects/Cube/Cube.yy",},},
