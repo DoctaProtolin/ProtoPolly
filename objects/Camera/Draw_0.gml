@@ -4,7 +4,13 @@
     // If using viewports, camera_get_active returns the viewport currently in use.
     var camera = camera_get_active();
 
-    camera_set_view_mat(camera, matrix_build_lookat(x, y, z, room_width/2, room_height/2, 0, 0, 0, -1));
+    var lookMatrix = matrix_build_lookat(x, y, z, room_width/2, room_height/2, 0, 0, 0, -1);
+
+    if (instance_exists(Player)) {
+        lookMatrix = matrix_build_lookat(x, y, z, Player.x, Player.y, Player.z, 0, 0, -1);
+    }
+
+    camera_set_view_mat(camera, lookMatrix);
     camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(), 1, 8000));
 
     //println(dsin(lightAngle) * 200 + 100);

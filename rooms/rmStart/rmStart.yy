@@ -15,6 +15,7 @@
     {"name":"inst_520E690D","path":"rooms/rmStart/rmStart.yy",},
     {"name":"inst_21818A48","path":"rooms/rmStart/rmStart.yy",},
     {"name":"inst_256C870E","path":"rooms/rmStart/rmStart.yy",},
+    {"name":"inst_2D55980F","path":"rooms/rmStart/rmStart.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -60,6 +61,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"PointLight","path":"objects/PointLight/PointLight.yy",},"propertyId":{"name":"g","path":"objects/PointLight/PointLight.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"PointLight","path":"objects/PointLight/PointLight.yy",},"propertyId":{"name":"b","path":"objects/PointLight/PointLight.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1408.0,"y":384.0,},
+        {"$GMRInstance":"v2","%Name":"inst_2D55980F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D55980F","objectId":{"name":"Player","path":"objects/Player/Player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":736.0,"y":224.0,},
       ],"layers":[],"name":"Objects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":22,"TileCompressedData":[-264,1,],"TileDataFormat":1,},"tilesetId":null,"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Camera","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

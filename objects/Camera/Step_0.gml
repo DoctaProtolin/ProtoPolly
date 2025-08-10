@@ -5,6 +5,8 @@
     var lookDepth = keyboard_check(ord("W")) - keyboard_check(ord("S"));
     var lookHorizontal = keyboard_check(ord("A")) - keyboard_check(ord("D"));
 
+    if (disableCameraMovement) return;
+    
     if (mode == WALK) {
         // Update velocity
         velX += dcos(lookAngle - 90) * Speed * moveVertical;

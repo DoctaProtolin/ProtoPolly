@@ -62,3 +62,5 @@
 
     lightAngle = 0;
 
+    disableCameraMovement = true;
+
