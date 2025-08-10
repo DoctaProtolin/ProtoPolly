@@ -7,6 +7,10 @@
     var lookMatrix = matrix_build_lookat(x, y, z, room_width/2, room_height/2, 0, 0, 0, -1);
 
     if (instance_exists(Player)) {
+        
+        x = dcos(Player.cameraAngle) * Player.cameraDist + Player.x;
+        y = dsin(Player.cameraAngle) * Player.cameraDist + Player.y;
+        
         lookMatrix = matrix_build_lookat(x, y, z, Player.x, Player.y, Player.z, 0, 0, -1);
     }
 

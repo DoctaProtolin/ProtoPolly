@@ -11,7 +11,10 @@
 
     texture = sprite_get_texture(sprBrick, 0);
 
-    gravity = 0.02175;
+    Gravity = 0.02175; // Using the built-in variable increments y
+
+    cameraAngle = 0;
+    cameraDist = 600;
 
     velX = 0;
     velY = 0;

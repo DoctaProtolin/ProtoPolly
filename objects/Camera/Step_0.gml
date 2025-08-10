@@ -3,7 +3,7 @@
     var moveVertical = keyboard_check(vk_up) - keyboard_check(vk_down);
     var moveHorizontal = keyboard_check(vk_right) - keyboard_check(vk_left);
     var lookDepth = keyboard_check(ord("W")) - keyboard_check(ord("S"));
-    var lookHorizontal = keyboard_check(ord("A")) - keyboard_check(ord("D"));
+    
 
     if (disableCameraMovement) return;
     
