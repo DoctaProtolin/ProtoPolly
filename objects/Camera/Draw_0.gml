@@ -47,7 +47,7 @@
         
         var coord = 0, color = 0;
         
-        switch (i mod 3) {
+        switch (i % 3) {
             case 0: 
                 coord = pointLight.x;
                 color = pointLight.r;

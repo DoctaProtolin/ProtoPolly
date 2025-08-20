@@ -7,12 +7,10 @@
     x = 0;
     y = room_height;
     z = -100;
-
-    scaleX = room_width;
+    
+    scaleX = 300;
     scaleY = 30;
     scaleZ = 20;
-
-    texture = sprite_get_texture(sprMetal, 0);
     
-    h = 0;
+    texture = sprite_get_texture(sprMetal, 0);
     

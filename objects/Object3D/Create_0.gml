@@ -1,7 +1,7 @@
 
     vbuffer = vertex_create_buffer();
 
-    // Set properties
+    // Set default properties
     z = -100;
     hitbox = -1;
     

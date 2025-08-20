@@ -125,11 +125,12 @@ function loadModel(vbuffer, source) {
             
             // Needed to use a table for this part. Thank you Dr. Orlov
             j ++;
-            index = (j mod 3) + floor(j / 3);
-            if (j mod 3 == 0) index = 0;
+            index = (j % 3) + floor(j / 3);
+            if (j % 3 == 0) index = 0;
         }
         
         println("Added face");
     }
     
+    file_text_close(file);
 }

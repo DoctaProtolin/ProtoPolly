@@ -11,3 +11,7 @@
     // Camera modes
     #macro WALK  "walk"
     #macro ORBIT "orbit"
+
+    // Mouse
+    #macro mouseX mouse_x
+    #macro mouseY mouse_y

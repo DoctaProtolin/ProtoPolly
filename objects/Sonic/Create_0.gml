@@ -1,7 +1,7 @@
 
     event_inherited();
     
-    loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Armature.obj");
+    //loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Armature.obj");
 
     timer = 0;
 

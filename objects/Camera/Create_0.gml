@@ -26,7 +26,7 @@
     for (var i = 0; i < room_width; i += s) {
         for (var j = 0; j < room_height; j += s) {
             
-            var col = ((i + j) / s) mod 2 == 0 ? c_white : c_aqua;
+            var col = ((i + j) / s) % 2 == 0 ? c_white : c_aqua;
             
             vertAddPoint(vbuffer, i,      j, checker_z, 0, 0, 1,      0, 0, col, 1);
             vertAddPoint(vbuffer, i + s, j, checker_z, 0, 0, 1,       1, 0, col, 1);
