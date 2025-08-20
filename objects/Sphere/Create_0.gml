@@ -7,8 +7,9 @@
 
     texture = sprite_get_texture(sprMetal, 0);
 
-    x = room_width/2 - 300;
+    x = room_width/2;
     y = room_height/2;
+    z = 200;
 
     scaleX = 100;
     scaleY = 100;

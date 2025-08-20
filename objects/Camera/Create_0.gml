@@ -66,3 +66,4 @@
 
     disableCameraMovement = true;
 
+    h = 0;

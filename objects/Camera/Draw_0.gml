@@ -1,33 +1,30 @@
      
     // If using viewports, camera_get_active returns the viewport currently in use.
 
+    println([mouse_x, display_get_width()]);
+
     #macro DISPLAY_WIDTH display_get_width()
     #macro DISPLAY_HEIGHT display_get_height()
-
-    if (!surface_exists(mainSurface)) {
-        mainSurface = surface_create(display_get_width(), display_get_height());
-    }
-
-    surface_set_target(mainSurface);
-    draw_clear_alpha(c_black, 0);
-
+    
     var camera = camera_get_active();
+    
+    var lookMatrix;
 
-    if (instance_exists(Player) and false) {
+    if (instance_exists(Player)) {
         
         x = dcos(Player.cameraAngle) * Player.cameraDist + Player.x;
         y = Player.y;
         z = dsin(Player.cameraAngle) * Player.cameraDist + Player.z;
         
-        var lookMatrix = matrix_build_lookat(x, y, z, Player.x, Player.y, Player.z, 0, -1, 0);
+        lookMatrix = matrix_build_lookat(Player.x, Player.y, -1000, Player.x, Player.y, 0, 0, 1, 0);
+        
         camera_set_view_mat(camera, lookMatrix);
-    } else {
-        var lookMatrix = matrix_build_lookat(DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, -800, DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, 0, 0, -1, 0);
-        camera_set_view_mat(camera, lookMatrix);
-    }
-    camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(), 1, 8000));
-
-    //println(dsin(lightAngle) * 200 + 100);
+    }/* else {
+        lookMatrix = matrix_build_lookat(DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, -800, DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, 0, 1, 1, 0);
+    }*/
+    
+    camera_set_view_mat(camera, lookMatrix);
+    camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, DISPLAY_WIDTH/DISPLAY_HEIGHT, 1, 8000));
 
     // Apply camera
     camera_apply(camera);
@@ -120,13 +117,8 @@
         
         shader_reset();
     }
-    surface_reset_target();    
-    
-    shader_set(shdMirror);
-    draw_surface(mainSurface, 0, 0);
-    shader_reset();
-    
 
+    
     // You need to draw everything after you set the camera object.
 
     // https://youtu.be/XLpcn0XQJj8?list=PL_hT--4HOvrcML9uqHe4fwBVTm650Vy3V&t=711

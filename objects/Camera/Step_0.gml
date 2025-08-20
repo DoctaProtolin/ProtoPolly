@@ -1,10 +1,10 @@
 
+    if (instance_exists(Player)) return;
+    
     // Get input
     var moveVertical = keyboard_check(vk_up) - keyboard_check(vk_down);
     var moveHorizontal = keyboard_check(vk_right) - keyboard_check(vk_left);
     var lookDepth = keyboard_check(ord("W")) - keyboard_check(ord("S"));
-    
-    if (instance_exists(Player)) return;
     
     if (mode == WALK) {
         // Update velocity
