@@ -2,7 +2,7 @@
     vbuffer = vertex_create_buffer();
 
     // Set properties
-    z = 100;
+    z = 0;
 
     if (useDefaultScale) {
         scaleX = 100;

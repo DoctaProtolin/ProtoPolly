@@ -14,12 +14,11 @@
     Gravity = 0.02175; // Using the built-in variable increments y
 
     cameraAngle = 0;
-    cameraDist = 600;
+    cameraDist = 900;
 
     velX = 0;
     velY = 0;
     velZ = 0;
 
     Friction = 0.1;
-
     Speed = 0.5;

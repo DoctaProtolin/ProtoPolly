@@ -1,27 +1,37 @@
      
-   
-
     // If using viewports, camera_get_active returns the viewport currently in use.
-    var camera = camera_get_active();
 
-    var lookMatrix = matrix_build_lookat(x, y, z, room_width/2, room_height/2, 0, 0, 0, -1);
+    #macro DISPLAY_WIDTH display_get_width()
+    #macro DISPLAY_HEIGHT display_get_height()
 
-    if (instance_exists(Player)) {
-        
-        x = dcos(Player.cameraAngle) * Player.cameraDist + Player.x;
-        y = dsin(Player.cameraAngle) * Player.cameraDist + Player.y;
-        
-        lookMatrix = matrix_build_lookat(x, y, z, Player.x, Player.y, Player.z, 0, 0, -1);
+    if (!surface_exists(mainSurface)) {
+        mainSurface = surface_create(display_get_width(), display_get_height());
     }
 
-    camera_set_view_mat(camera, lookMatrix);
+    surface_set_target(mainSurface);
+    draw_clear_alpha(c_black, 0);
+
+    var camera = camera_get_active();
+
+    if (instance_exists(Player) and false) {
+        
+        x = dcos(Player.cameraAngle) * Player.cameraDist + Player.x;
+        y = Player.y;
+        z = dsin(Player.cameraAngle) * Player.cameraDist + Player.z;
+        
+        var lookMatrix = matrix_build_lookat(x, y, z, Player.x, Player.y, Player.z, 0, -1, 0);
+        camera_set_view_mat(camera, lookMatrix);
+    } else {
+        var lookMatrix = matrix_build_lookat(DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, -800, DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, 0, 0, -1, 0);
+        camera_set_view_mat(camera, lookMatrix);
+    }
     camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, window_get_width()/window_get_height(), 1, 8000));
 
     //println(dsin(lightAngle) * 200 + 100);
 
     // Apply camera
     camera_apply(camera);
-
+    
     shader_set(DEFAULT_RENDERER);
     vertex_submit(vbuffer, pr_trianglelist, sprite_get_texture(sprGrass, 0));
     shader_reset();
@@ -53,17 +63,15 @@
                 color = pointLight.r;
             
                 array_push(lightIntensities, pointLight.intensity);
-            break;
-            
+                break;
             case 1:
                 coord = pointLight.y;
                 color = pointLight.g;
-            break;
-            
+                break;
             case 2:
                 coord = pointLight.z;
                 color = pointLight.b;
-            break;
+                break;
         }
         
         array_push(lightPositions, coord);
@@ -112,6 +120,12 @@
         
         shader_reset();
     }
+    surface_reset_target();    
+    
+    shader_set(shdMirror);
+    draw_surface(mainSurface, 0, 0);
+    shader_reset();
+    
 
     // You need to draw everything after you set the camera object.
 

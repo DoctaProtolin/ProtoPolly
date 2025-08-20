@@ -3,8 +3,8 @@
   "%Name":"shdGeneralLight",
   "name":"shdGeneralLight",
   "parent":{
-    "name":"Shaders",
-    "path":"folders/Shaders.yy",
+    "name":"Lighting",
+    "path":"folders/Shaders/Lighting.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

@@ -4,8 +4,7 @@
     var moveHorizontal = keyboard_check(vk_right) - keyboard_check(vk_left);
     var lookDepth = keyboard_check(ord("W")) - keyboard_check(ord("S"));
     
-
-    if (disableCameraMovement) return;
+    if (instance_exists(Player)) return;
     
     if (mode == WALK) {
         // Update velocity

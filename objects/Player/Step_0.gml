@@ -1,10 +1,9 @@
 
-    var moveVertical = keyboard_check(vk_up) - keyboard_check(vk_down);
+    var moveVertical = keyboard_check(vk_down) - keyboard_check(vk_up);
     var moveHorizontal = keyboard_check(vk_right) - keyboard_check(vk_left);
     var lookHorizontal = keyboard_check(ord("A")) - keyboard_check(ord("D"));
 
-    cameraAngle -= lookHorizontal * 5;
-    cameraAngle = cameraAngle mod 360;
+    cameraAngle = (cameraAngle + lookHorizontal * 5) mod 360;
     
     velX += Speed * moveHorizontal;
     velY += Speed * moveVertical;

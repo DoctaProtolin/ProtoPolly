@@ -24,7 +24,7 @@
     var x2 = 600, y2 = 600;
     
     var s = 64;
-    var checker_z = 0;
+    var checker_z = -100;
 
     for (var i = 0; i < room_width; i += s) {
         for (var j = 0; j < room_height; j += s) {
@@ -42,6 +42,8 @@
     }
 
     vertex_end(vbuffer);
+
+    mainSurface = -1;
 
     x = room_width/2;
     y = room_height;

@@ -3,8 +3,8 @@
   "%Name":"shdPointLight",
   "name":"shdPointLight",
   "parent":{
-    "name":"Shaders",
-    "path":"folders/Shaders.yy",
+    "name":"Lighting",
+    "path":"folders/Shaders/Lighting.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",
