@@ -6,14 +6,14 @@
     vertex_end(vbuffer);
 
     scaleX = 50;
-    scaleY = 50;
-    scaleZ = 100;
+    scaleY = 100;
+    scaleZ = 50;
 
     texture = sprite_get_texture(sprBrick, 0);
 
-    Gravity = 0.02175; // Using the built-in variable increments y
+    Gravity = 0; //0.2; // Using the built-in variable increments y
 
-    cameraAngle = 0;
+    cameraAngle = 90;
     cameraDist = 900;
 
     velX = 0;

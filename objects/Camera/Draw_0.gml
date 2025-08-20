@@ -1,27 +1,20 @@
      
     // If using viewports, camera_get_active returns the viewport currently in use.
-
-    println([mouse_x, display_get_width()]);
-
-    #macro DISPLAY_WIDTH display_get_width()
-    #macro DISPLAY_HEIGHT display_get_height()
-    
     var camera = camera_get_active();
-    
     var lookMatrix;
-
+    
     if (instance_exists(Player)) {
         
         x = dcos(Player.cameraAngle) * Player.cameraDist + Player.x;
         y = Player.y;
-        z = dsin(Player.cameraAngle) * Player.cameraDist + Player.z;
+        z = -dsin(Player.cameraAngle) * Player.cameraDist + Player.z;
         
-        lookMatrix = matrix_build_lookat(Player.x, Player.y, -1000, Player.x, Player.y, 0, 0, 1, 0);
+        lookMatrix = matrix_build_lookat(x, y, z, Player.x, Player.y, Player.z, 0, 1, 0);
         
         camera_set_view_mat(camera, lookMatrix);
-    }/* else {
+    } else {
         lookMatrix = matrix_build_lookat(DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, -800, DISPLAY_WIDTH/2, DISPLAY_HEIGHT/2, 0, 1, 1, 0);
-    }*/
+    }
     
     camera_set_view_mat(camera, lookMatrix);
     camera_set_proj_mat(camera, matrix_build_projection_perspective_fov(60, DISPLAY_WIDTH/DISPLAY_HEIGHT, 1, 8000));
@@ -74,9 +67,7 @@
         array_push(lightPositions, coord);
         array_push(lightColours, color);
     }
-
-    #macro DEFAULT_RENDERER shdMultiLight   
-
+    
     with (Object3D) {
         if (!displayModel) continue;
         

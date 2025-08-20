@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"vertAddTriangle",
+  "%Name":"collision",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"vertAddTriangle",
+  "name":"collision",
   "parent":{
-    "name":"Vertex",
-    "path":"folders/Scripts/Vertex.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

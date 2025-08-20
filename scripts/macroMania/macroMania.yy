@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"vertAddTriangle",
+  "%Name":"macroMania",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"vertAddTriangle",
+  "name":"macroMania",
   "parent":{
-    "name":"Vertex",
-    "path":"folders/Scripts/Vertex.yy",
+    "name":"Utility",
+    "path":"folders/Scripts/Utility.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

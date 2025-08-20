@@ -1,0 +1,11 @@
+
+- Write story
+- Plan zones
+- Create sky light
+- Create sky box
+- Create basic physics
+- Create collision
+- Learn about normal maps
+- Learn about baked lighting
+- Implement shell textures
+- 

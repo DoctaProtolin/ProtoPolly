@@ -9,7 +9,7 @@
 
     x = room_width/2;
     y = room_height/2;
-    z = 200;
+    z = -200;
 
     scaleX = 100;
     scaleY = 100;

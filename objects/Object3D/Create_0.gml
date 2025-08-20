@@ -2,18 +2,13 @@
     vbuffer = vertex_create_buffer();
 
     // Set properties
-    z = 0;
-
-    if (useDefaultScale) {
-        scaleX = 100;
-        scaleY = 100;
-        scaleZ = 100;
-    } else {
-        scaleX = inScaleX;
-        scaleY = inScaleY;
-        scaleZ = inScaleZ;
-    }
-
+    z = -100;
+    hitbox = -1;
+    
+    scaleX = 100;
+    scaleY = 100;
+    scaleZ = 100;
+    
     rotX = 0;
     rotY = 0;
     rotZ = 0;

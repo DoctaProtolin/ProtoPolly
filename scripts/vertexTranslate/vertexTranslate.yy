@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"vertexTranslate",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Vertex",
+    "path":"folders/Scripts/Vertex.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

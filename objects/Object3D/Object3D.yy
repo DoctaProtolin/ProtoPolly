@@ -9,8 +9,8 @@
   "name":"Object3D",
   "overriddenProperties":[],
   "parent":{
-    "name":"Models",
-    "path":"folders/Objects/Models.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,6 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"useDefaultScale","filters":[],"listItems":[],"multiselect":false,"name":"useDefaultScale","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"inScaleX","filters":[],"listItems":[],"multiselect":false,"name":"inScaleX","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"inScaleY","filters":[],"listItems":[],"multiselect":false,"name":"inScaleY","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"inScaleZ","filters":[],"listItems":[],"multiselect":false,"name":"inScaleZ","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},

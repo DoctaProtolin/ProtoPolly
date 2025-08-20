@@ -1,7 +1,4 @@
 
-    #macro WALK "walk"
-    #macro ORBIT "orbit"
-
     random_set_seed(10);
 
     gpu_set_ztestenable(true);
