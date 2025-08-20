@@ -14,7 +14,7 @@ function playerCollision() {
     var hitbox = getHitbox(Floor.x, Floor.y, Floor.scaleX, Floor.scaleY);
     var point = new Vector(Player.x, Player.y);
     
-    with(debugSphere) {
+    with (debugSphere) {
         
         self.x = other.x;
         self.y = other.y;
