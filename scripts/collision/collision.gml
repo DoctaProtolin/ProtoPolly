@@ -37,12 +37,12 @@ function solveLine(line, x) {
 
 function inRange(line, x) {
     // Maybe shouldn't be <= in case you select two lines joined at their edges.
-    return min(line.a.x, line.b.x) < x && x < max(line.a.x, line.b.x);
+    return min(line.a.x, line.b.x) <= x && x <= max(line.a.x, line.b.x);
 }
 
 function inRangeY(line, y) {
     // Maybe shouldn't be <= in case you select two lines joined at their edges.
-    return min(line.a.y, line.b.y) < y && y < max(line.a.y, line.b.y);
+    return min(line.a.y, line.b.y) <= y && y <= max(line.a.y, line.b.y);
 }
 
 function getIntersection(lineA, lineB) {
@@ -63,7 +63,6 @@ function getIntersection(lineA, lineB) {
             var xx = lineA.a.x;
             var yy = solveLine(lineB, xx);
             
-            // Untested code
             if (inRange(lineB, xx) && inRangeY(lineA, yy)) {
                 return new Vector(xx, yy);
             }
