@@ -19,7 +19,7 @@
     velY = 0;
     velZ = 0;
     
-    Gravity = 0.2; // Using the built-in variable increments y unwillingly
+    Gravity = 0.5; // Using the built-in variable increments y unwillingly
     Friction = 0.1;
     Speed = 0.5;
     

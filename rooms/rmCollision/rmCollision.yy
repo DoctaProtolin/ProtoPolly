@@ -11,7 +11,7 @@
     {"name":"inst_770FD394","path":"rooms/rmCollision/rmCollision.yy",},
     {"name":"inst_53646C3A","path":"rooms/rmCollision/rmCollision.yy",},
     {"name":"inst_2785866F","path":"rooms/rmCollision/rmCollision.yy",},
-    {"name":"inst_3C29FC14","path":"rooms/rmCollision/rmCollision.yy",},
+    {"name":"inst_F84A752","path":"rooms/rmCollision/rmCollision.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -25,7 +25,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"PointLight","path":"objects/PointLight/PointLight.yy",},"propertyId":{"name":"intensity","path":"objects/PointLight/PointLight.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"50000",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":32.0,},
         {"$GMRInstance":"v2","%Name":"inst_2785866F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2785866F","objectId":{"name":"Sphere","path":"objects/Sphere/Sphere.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":352.0,},
-        {"$GMRInstance":"v2","%Name":"inst_3C29FC14","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3C29FC14","objectId":{"name":"Floor","path":"objects/Floor/Floor.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":544.0,},
+        {"$GMRInstance":"v2","%Name":"inst_F84A752","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F84A752","objectId":{"name":"WallHitbox","path":"objects/WallHitbox/WallHitbox.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":576.0,},
       ],"layers":[],"name":"Objects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Camera","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_3E4887FD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3E4887FD","objectId":{"name":"Camera","path":"objects/Camera/Camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":7.0,"scaleY":7.0,"x":32.0,"y":32.0,},

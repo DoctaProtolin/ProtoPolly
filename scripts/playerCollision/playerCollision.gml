@@ -5,14 +5,21 @@ function getGroundPoint() {
 
 function playerCollision() {
     
-    var hitbox = getHitbox(Floor.x, Floor.y, Floor.scaleX, Floor.scaleY);
     var groundPoint = getGroundPoint();
+    var groundObject = NULL;
     
-    if (pointInHitbox(groundPoint, hitbox)) {
-        grounded = true;
-    } else println("No collision");
+    for (var i = 0; i < instance_number(WallHitbox); i ++) {
+        var object = instance_find(WallHitbox, i);
+        var hitbox = getHitbox(object.x, object.y, object.scaleX, object.scaleY);
         
+        if (pointInHitbox(groundPoint, hitbox)) {
+            grounded = true;
+            groundObject = object;
+            break;
+        }
+    }
+    
     if (grounded) {
-        y = Floor.y - Floor.scaleY - scaleY;
+        y = groundObject.y - groundObject.scaleY - scaleY;
     }
 }

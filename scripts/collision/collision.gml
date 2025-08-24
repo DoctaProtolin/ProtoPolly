@@ -41,7 +41,7 @@ function getHitbox(x, y, scaleX, scaleY) {
             debugSpheres[i] = instance_create_layer(0, 0, "Objects", Sphere);
             
             with (debugSpheres[i]) {
-                z = Floor.z;
+                z = 100;
                 self.scaleX = 20;
                 self.scaleY = 20;
                 self.scaleZ = 20;
@@ -98,6 +98,6 @@ function pointInHitbox(point, hitbox) {
             intersections ++;
         }
     }
-    
+    // Check if odd
     return intersections % 2;
 }
