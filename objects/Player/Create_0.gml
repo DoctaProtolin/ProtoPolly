@@ -4,7 +4,7 @@
     loadModel(vbuffer, "C:/Users/yello/GameMakerProjects/ProtoPolly/Cube.obj");
     vertex_end(vbuffer);
 
-    y = room_height;
+    y = 0;
     
     scaleX = 50;
     scaleY = 100;
@@ -19,6 +19,8 @@
     velY = 0;
     velZ = 0;
     
-    Gravity = 0; //0.2; // Using the built-in variable increments y
+    Gravity = 0.2; // Using the built-in variable increments y unwillingly
     Friction = 0.1;
     Speed = 0.5;
+    
+    grounded = false;

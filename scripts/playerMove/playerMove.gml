@@ -14,10 +14,10 @@ function playerMove() {
         else velX = 0;
     }
     
-    if (moveVertical == 0) {
-        if (abs(velY) > 1) velY *= Friction;
-        else velY = 0;
-    }
+    //if (moveVertical == 0) {
+        //if (abs(velY) > 1) velY *= Friction;
+        //else velY = 0;
+    //}
 
     // Clamp velocity
     velX = clamp(velX, -5, 5); 

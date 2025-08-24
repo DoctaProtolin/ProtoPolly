@@ -67,9 +67,9 @@ function getHitbox(x, y, scaleX, scaleY) {
     for (var i = 1; i < 4; i ++) {
         var cornerA = corners[i-1];
         var cornerB = corners[i];
-        var line = new Line(cornerA.x, cornerA.y, cornerB.x, cornerB.y);
+        var l = new Line(cornerA.x, cornerA.y, cornerB.x, cornerB.y);
         
-        array_push(hitbox, line);
+        array_push(hitbox, l);
         
         if (drawSphereA) {
             debugSpheres[i-1].x = cornerA.x;
@@ -90,7 +90,6 @@ function pointInHitbox(point, hitbox) {
     var intersections = 0;
     
     for (var i = 0; i < array_length(hitbox); i ++) {
-        
         var l = hitbox[i];
         
         var xx = getIntersection(l, ray).x;
